@@ -1,5 +1,11 @@
 <template>
-  <TaskUser v-for="{id, name} in usersStore.users" :key="id" :userName="name" />
+  <TaskUser
+    v-for="{id, name, email, phone} in usersStore.users"
+    :key="id"
+    :userName="name"
+    :userEmail="email"
+    :userPhone="phone"
+  />
 </template>
 
 <script lang="ts" setup>

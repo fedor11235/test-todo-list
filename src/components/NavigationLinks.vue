@@ -23,5 +23,6 @@ export default {
 .link {
   text-decoration: none;
   margin-right: 8px;
+  color: #60693D;
 }
 </style>

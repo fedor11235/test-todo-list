@@ -14,7 +14,6 @@ import NavigationLinks from '@/components/NavigationLinks.vue'
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 21px;
 }
 </style>

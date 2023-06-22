@@ -2,7 +2,9 @@ import { defineStore } from 'pinia'
 
 type User = {
   id: number
-  name: string,
+  name: string
+  email: string
+  phone: string
 }
 
 type UsersState = {
@@ -12,15 +14,21 @@ type UsersState = {
 const DEFAULT_USERS: User[] = [
   {
     id: 0,
-    name: 'Фёдор'
+    name: 'Фёдор',
+    email: 'fedor@net.com',
+    phone: '+669599494'
   },
   {
     id: 1,
-    name: 'Нина'
+    name: 'Нина',
+    email: 'nina@net.com',
+    phone: '+100001010'
   },
   {
     id: 2,
-    name: 'Лена'
+    name: 'Лена',
+    email: 'lena@net.com',
+    phone: '+670007887'
   }
 ]
 

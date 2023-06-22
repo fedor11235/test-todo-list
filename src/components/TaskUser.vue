@@ -1,21 +1,52 @@
 <template>
   <div class="task">
-    Задача пользователя {{ userName }}
+    <div class="data">
+      <div>Имя <input v-model="userNameInput" ></div>
+      <div>email <input v-model="userEmailInput" ></div>
+      <div>номер телефона <input v-model="userPhoneInput" ></div>
+    </div>
+    <button class="todo">TODO лист</button>
   </div>
 </template>
 
 <script lang="ts" setup>
 
-defineProps<{
+import { ref } from 'vue'
+
+const props = defineProps<{
   userName: string
+  userEmail: string
+  userPhone: string
 }>()
+
+const userNameInput = ref(props.userName)
+const userEmailInput = ref(props.userEmail)
+const userPhoneInput = ref(props.userPhone)
 
 </script>
 
 <style scoped>
 .task {
+  display: flex;
+  justify-content: space-between;
   padding: 8px;
   margin: 4px 16px;
-  background-color: #d4d4ff;
+  background-color: #59691D;
+  color: white;
+}
+.data {
+  display: flex;
+  gap: 16px;
+}
+.todo {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #D8EC89;
+  color: #60693D;
+  transition: scale .1s;
+}
+.todo:active {
+  scale: 0.9;
 }
 </style>
