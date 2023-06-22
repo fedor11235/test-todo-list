@@ -15,7 +15,7 @@ defineProps<{
 <style scoped>
 .task {
   padding: 8px;
-  margin: 4px 0;
+  margin: 4px 16px;
   background-color: #d4d4ff;
 }
 </style>

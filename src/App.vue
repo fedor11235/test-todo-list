@@ -1,12 +1,10 @@
 <template>
+  <NavigationLinks />
   <router-view />
 </template>
 
-<script lang="ts" >
-
-export default {
-  name: 'App'
-}
+<script lang="ts" setup>
+import NavigationLinks from '@/components/NavigationLinks.vue'
 
 </script>
 
@@ -17,6 +15,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 21px;
 }
 </style>

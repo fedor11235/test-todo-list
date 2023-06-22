@@ -12,15 +12,15 @@ type UsersState = {
 const DEFAULT_USERS: User[] = [
   {
     id: 0,
-    name: 'Fedor'
+    name: 'Фёдор'
   },
   {
     id: 1,
-    name: 'Nina'
+    name: 'Нина'
   },
   {
     id: 2,
-    name: 'Lena'
+    name: 'Лена'
   }
 ]
 
