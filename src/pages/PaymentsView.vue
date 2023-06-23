@@ -9,8 +9,8 @@
       :key="id"
       :text="text"
       :done="done"
-      :id-user="userModal.id"
-      :id-task="id"
+      :user-id="userModal.id"
+      :task-id="id"
       @show-modal="popupShow=true"
     />
   </modal-layout>
@@ -41,7 +41,6 @@ function handlerShowModal (user: any) {
   popupShow.value = true
   userModal.value = user
 }
-
 </script>
 
 <style>

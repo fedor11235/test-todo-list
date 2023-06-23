@@ -1,9 +1,9 @@
 <template>
   <div class="task">
     <div class="data">
-      <div>Имя: {{ userNameInput }}</div>
-      <div>email: {{ userEmailInput }}</div>
-      <div>номер телефона: {{ userPhoneInput }}</div>
+      <div>Имя: {{ userName }}</div>
+      <div>email: {{ userEmail }}</div>
+      <div>номер телефона: {{ userPhone }}</div>
     </div>
     <div class="buttons">
       <button class="todo" @click="emit('show-modal-todo')">TODO лист</button>
@@ -13,10 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-
-import { ref } from 'vue'
-
-const props = defineProps<{
+defineProps<{
   userName: string
   userEmail: string
   userPhone: string
@@ -26,11 +23,6 @@ const emit = defineEmits<{
   (e: 'show-modal-todo'): void
   (e: 'show-modal-edit'): void
 }>()
-
-const userNameInput = ref(props.userName)
-const userEmailInput = ref(props.userEmail)
-const userPhoneInput = ref(props.userPhone)
-
 </script>
 
 <style scoped>
@@ -59,6 +51,8 @@ const userPhoneInput = ref(props.userPhone)
   background-color: #D8EC89;
   color: #60693D;
   transition: scale .1s;
+  font-size: 16px;
+  font-weight: 500;
 }
 .todo:active {
   scale: 0.9;

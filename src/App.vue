@@ -5,7 +5,6 @@
 
 <script lang="ts" setup>
 import NavigationLinks from '@/components/NavigationLinks.vue'
-
 </script>
 
 <style>
@@ -15,6 +14,8 @@ import NavigationLinks from '@/components/NavigationLinks.vue'
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 21px;
+  font-size: 16px;
+  font-weight: 500;
 }
 .v-enter-active,
 .v-leave-active {

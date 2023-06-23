@@ -8,7 +8,7 @@
         id="checkbox"
         class="checkbox"
         :checked="done"
-        @click="handlerClickCheckbox(idUser, idTask)"
+        @click="usersStore.changeTaskStatus(userId, taskId)"
       >
     </div>
   </div>
@@ -22,13 +22,9 @@ const usersStore = useUsersStore()
 defineProps<{
   text: string
   done: boolean
-  idUser: number
-  idTask: number
+  userId: number
+  taskId: number
 }>()
-
-function handlerClickCheckbox (idUser: number, idTask: number) {
-  usersStore.changeTaskStatus(idUser, idTask)
-}
 </script>
 
 <style scoped>

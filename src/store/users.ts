@@ -14,6 +14,14 @@ type User = {
   todo: Todo[]
 }
 
+type Fields = {
+  name?: string
+  email?: string
+  phone?: string
+}
+
+type Field = 'name' | 'email' | 'phone'
+
 type UsersState = {
   users: User[]
 }
@@ -87,10 +95,17 @@ export const useUsersStore = defineStore('e', {
   getters: {
   },
   actions: {
-    changeTaskStatus (idUser: number, idTask: number) {
-      const task = this.users.find(user => user.id === idUser)!.todo.find(task => task.id === idTask)
+    changeTaskStatus (userId: number, taskId: number) {
+      const task = this.users.find(user => user.id === userId)!.todo.find(task => task.id === taskId)
       task!.done = !task!.done
       console.log('task', task!.done)
+    },
+    editUser (idUser: number, fields: Fields) {
+      const user = this.users.find(user => user.id === idUser)
+      for (const field of Object.keys(fields)) {
+        user![field as Field] = fields![field as Field] as string
+      }
+      console.log(user)
     }
   }
 })

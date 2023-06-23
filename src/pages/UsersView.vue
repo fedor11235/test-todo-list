@@ -9,8 +9,8 @@
         :key="id"
         :text="text"
         :done="done"
-        :id-user="userModal.id"
-        :id-task="id"
+        :user-id="userModal.id"
+        :task-id="id"
       />
     </modal-layout>
   </transition>
@@ -20,6 +20,7 @@
       @close-modal="modalShowEdit = false"
     >
     <EditUser
+      :user-id="userModal.id"
       :user-name="userModal.name"
       :user-email="userModal.email"
       :user-phone="userModal.phone"
@@ -60,12 +61,4 @@ function handlerShowModalEdit (user: any) {
   modalShowEdit.value = true
   userModal.value = user
 }
-
-// function handlerCloseModal () {
-//   modalShowTODO.value = false
-// }
-
 </script>
-
-<style>
-</style>

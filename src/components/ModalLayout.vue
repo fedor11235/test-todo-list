@@ -7,11 +7,9 @@
 </template>
 
 <script lang="ts" setup>
-
 const emit = defineEmits<{
   (e: 'close-modal'): void
 }>()
-
 </script>
 
 <style scoped>
