@@ -88,12 +88,10 @@ const DEFAULT_USERS: User[] = [
   }
 ]
 
-export const useUsersStore = defineStore('e', {
+export const useUsersStore = defineStore('users', {
   state: (): UsersState => ({
     users: DEFAULT_USERS
   }),
-  getters: {
-  },
   actions: {
     changeTaskStatus (userId: number, taskId: number) {
       const task = this.users.find(user => user.id === userId)!.todo.find(task => task.id === taskId)

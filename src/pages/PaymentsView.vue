@@ -4,15 +4,7 @@
       v-if="popupShow"
       @close-modal="popupShow=false"
     >
-    <task-user
-      v-for="{id, text, done} in userModal.todo"
-      :key="id"
-      :text="text"
-      :done="done"
-      :user-id="userModal.id"
-      :task-id="id"
-      @show-modal="popupShow=true"
-    />
+    Платежи йопт
   </modal-layout>
   </transition>
   <list-user
@@ -28,8 +20,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import ModalLayout from '@/components/ModalLayout.vue'
-import ListUser from '@/components/ListUser.vue'
-import TaskUser from '@/components/TaskUser.vue'
+
 import { useUsersStore } from '@/store'
 
 const usersStore = useUsersStore()

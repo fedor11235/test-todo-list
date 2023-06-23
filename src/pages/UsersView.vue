@@ -4,7 +4,7 @@
       v-if="modalShowTODO"
       @close-modal="modalShowTODO = false"
     >
-      <task-user
+      <user-task
         v-for="{id, text, done} in userModal.todo"
         :key="id"
         :text="text"
@@ -19,7 +19,7 @@
       v-if="modalShowEdit"
       @close-modal="modalShowEdit = false"
     >
-    <EditUser
+    <user-edit
       :user-id="userModal.id"
       :user-name="userModal.name"
       :user-email="userModal.email"
@@ -27,7 +27,7 @@
     />
     </modal-layout>
   </transition>
-  <list-user
+  <user-info
     v-for="user in usersStore.users"
     :key="user.id"
     :user-name="user.name"
@@ -41,9 +41,9 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import ModalLayout from '@/components/ModalLayout.vue'
-import ListUser from '@/components/ListUser.vue'
-import TaskUser from '@/components/TaskUser.vue'
-import EditUser from '@/components/EditUser.vue'
+import UserInfo from '@/components/UserInfo.vue'
+import UserTask from '@/components/UserTask.vue'
+import UserEdit from '@/components/UserEdit.vue'
 import { useUsersStore } from '@/store'
 
 const usersStore = useUsersStore()
