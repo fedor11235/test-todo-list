@@ -43,7 +43,9 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "func-call-spacing": "off"
+    }
   },
   "browserslist": [
     "> 1%",

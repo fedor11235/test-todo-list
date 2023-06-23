@@ -5,7 +5,7 @@
       <div>email <input v-model="userEmailInput" ></div>
       <div>номер телефона <input v-model="userPhoneInput" ></div>
     </div>
-    <button class="todo">TODO лист</button>
+    <button class="todo" @click="emit('show-modal')">TODO лист</button>
   </div>
 </template>
 
@@ -17,6 +17,10 @@ const props = defineProps<{
   userName: string
   userEmail: string
   userPhone: string
+}>()
+
+const emit = defineEmits<{
+  (e: 'show-modal'): void
 }>()
 
 const userNameInput = ref(props.userName)
