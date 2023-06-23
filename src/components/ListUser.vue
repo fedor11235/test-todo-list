@@ -1,11 +1,14 @@
 <template>
   <div class="task">
     <div class="data">
-      <div>Имя <input v-model="userNameInput" ></div>
-      <div>email <input v-model="userEmailInput" ></div>
-      <div>номер телефона <input v-model="userPhoneInput" ></div>
+      <div>Имя: {{ userNameInput }}</div>
+      <div>email: {{ userEmailInput }}</div>
+      <div>номер телефона: {{ userPhoneInput }}</div>
     </div>
-    <button class="todo" @click="emit('show-modal')">TODO лист</button>
+    <div class="buttons">
+      <button class="todo" @click="emit('show-modal-todo')">TODO лист</button>
+      <button class="todo" @click="emit('show-modal-edit')">Редактировать пользователя</button>
+    </div>
   </div>
 </template>
 
@@ -20,7 +23,8 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'show-modal'): void
+  (e: 'show-modal-todo'): void
+  (e: 'show-modal-edit'): void
 }>()
 
 const userNameInput = ref(props.userName)
@@ -39,6 +43,12 @@ const userPhoneInput = ref(props.userPhone)
   color: white;
 }
 .data {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  justify-items: start;
+  gap: 4px;
+}
+.buttons {
   display: flex;
   gap: 16px;
 }

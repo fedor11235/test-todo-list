@@ -1,7 +1,7 @@
 <template>
   <div class="popup"  @click.self="emit('close-modal')">
     <div class="modal">
-
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -27,10 +27,8 @@ const emit = defineEmits<{
   z-index: 99;
 }
 .modal {
-  width: 90%;
-  height: 90%;
+  padding: 16px;
   background-color: white;
   box-shadow: 0 0 10px black;
-  /* border-radius: 16px; */
 }
 </style>
