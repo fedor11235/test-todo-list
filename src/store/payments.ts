@@ -1,16 +1,5 @@
 import { defineStore } from 'pinia'
-
-type Payment = {
-  id: number
-  name: string
-  hash: string
-  sum: string
-  date: string
-}
-
-type PaymentsState = {
-  payments: Payment[]
-}
+import type { Payment, PaymentsState } from '@/types/payments'
 
 const DEFAULT_PAYMENTS: Payment[] = [
   {

@@ -4,35 +4,38 @@
       v-if="popupShow"
       @close-modal="popupShow=false"
     >
-    Платежи йопт
-  </modal-layout>
+      <payment-details
+        :paymentName="paymentModal.name"
+        :paymentHash="paymentModal.hash"
+        :paymentSum="paymentModal.sum"
+        :paymentDate="paymentModal.date"
+      />
+    </modal-layout>
   </transition>
-  <list-user
-    v-for="user in usersStore.users"
-    :key="user.id"
-    :user-name="user.name"
-    :user-email="user.email"
-    :user-phone="user.phone"
-    @show-modal="handlerShowModal(user)"
+  <payment-info
+    v-for="payment in paymentsStore.payments"
+    :key="payment.id"
+    :paymentName="payment.name"
+    :paymentHash="payment.hash"
+    @show-modal-payment="handlerShowModal(payment)"
   />
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 import ModalLayout from '@/components/ModalLayout.vue'
+import PaymentInfo from '@/components/PaymentInfo.vue'
+import PaymentDetails from '@/components/PaymentDetails.vue'
 
-import { useUsersStore } from '@/store'
+import { usePaymentsStore } from '@/store'
 
-const usersStore = useUsersStore()
+const paymentsStore = usePaymentsStore()
 
 const popupShow = ref(false)
-const userModal = ref()
+const paymentModal = ref()
 
-function handlerShowModal (user: any) {
+function handlerShowModal (payment: any) {
   popupShow.value = true
-  userModal.value = user
+  paymentModal.value = payment
 }
 </script>
-
-<style>
-</style>

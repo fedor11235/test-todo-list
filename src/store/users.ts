@@ -1,30 +1,5 @@
 import { defineStore } from 'pinia'
-
-type Todo = {
-  id: number
-  text: string
-  done: boolean
-}
-
-type User = {
-  id: number
-  name: string
-  email: string
-  phone: string
-  todo: Todo[]
-}
-
-type Fields = {
-  name?: string
-  email?: string
-  phone?: string
-}
-
-type Field = 'name' | 'email' | 'phone'
-
-type UsersState = {
-  users: User[]
-}
+import type { User, UsersState, Fields, Field } from '@/types/users'
 
 const DEFAULT_USERS: User[] = [
   {
