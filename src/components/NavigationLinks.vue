@@ -1,7 +1,7 @@
 <template>
   <div class="bar">
-    <router-link :class="['link', {'link-active': $route.name === 'users'}]" to="/">Пользователи</router-link>
-    <router-link :class="['link', {'link-active': $route.name === 'payments'}]" to="/payments">Платежи</router-link>
+    <router-link :class="['link', {'link-active': $route.name === 'users'}]" :to="{name: 'users'}">Пользователи</router-link>
+    <router-link :class="['link', {'link-active': $route.name === 'payments'}]" :to="{name: 'payments'}">Платежи</router-link>
   </div>
 </template>
 
