@@ -15,6 +15,7 @@
 
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
+import type { Fields } from '@/types/users'
 import { useUsersStore } from '@/store'
 
 const usersStore = useUsersStore()
@@ -41,27 +42,27 @@ const textSaveButton = computed(
   () => enableSaveButton.value ? 'Сохранить изменения' : 'Нет отредактированных данных'
 )
 
-function handlerInputName (event: any) {
-  userNameInput.value = event.target.value
-  if (props.userName !== event.target.value) {
+function handlerInputName (event: Event) {
+  userNameInput.value = (event.target as HTMLInputElement).value
+  if (props.userName !== (event.target as HTMLInputElement).value) {
     changedName.value = true
   } else {
     changedName.value = false
   }
 }
 
-function handlerInputEmail (event: any) {
-  userEmailInput.value = event.target.value
-  if (props.userEmail !== event.target.value) {
+function handlerInputEmail (event: Event) {
+  userEmailInput.value = (event.target as HTMLInputElement).value
+  if (props.userEmail !== (event.target as HTMLInputElement).value) {
     changedEmail.value = true
   } else {
     changedEmail.value = false
   }
 }
 
-function handlerInputPhone (event: any) {
-  userPhoneInput.value = event.target.value
-  if (props.userPhone !== event.target.value) {
+function handlerInputPhone (event: Event) {
+  userPhoneInput.value = (event.target as HTMLInputElement).value
+  if (props.userPhone !== (event.target as HTMLInputElement).value) {
     changedPhone.value = true
   } else {
     changedPhone.value = false
@@ -69,7 +70,7 @@ function handlerInputPhone (event: any) {
 }
 
 function handlerSaveData () {
-  const saveData: any = {}
+  const saveData: Fields = {}
   if (changedName.value) {
     saveData.name = userNameInput.value
     changedName.value = false
@@ -79,7 +80,7 @@ function handlerSaveData () {
     changedEmail.value = false
   }
   if (changedPhone.value) {
-    saveData.phone = changedPhone.value
+    saveData.phone = userPhoneInput.value
     changedPhone.value = false
   }
   usersStore.editUser(props.userId, saveData)

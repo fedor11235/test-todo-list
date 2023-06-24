@@ -23,6 +23,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import type { Payment } from '@/types/payments'
 import ModalLayout from '@/components/ModalLayout.vue'
 import PaymentInfo from '@/components/PaymentInfo.vue'
 import PaymentDetails from '@/components/PaymentDetails.vue'
@@ -34,7 +35,7 @@ const paymentsStore = usePaymentsStore()
 const popupShow = ref(false)
 const paymentModal = ref()
 
-function handlerShowModal (payment: any) {
+function handlerShowModal (payment: Payment) {
   popupShow.value = true
   paymentModal.value = payment
 }

@@ -40,6 +40,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import type { User } from '@/types/users'
 import ModalLayout from '@/components/ModalLayout.vue'
 import UserInfo from '@/components/UserInfo.vue'
 import UserTask from '@/components/UserTask.vue'
@@ -52,12 +53,12 @@ const modalShowTODO = ref(false)
 const modalShowEdit = ref(false)
 const userModal = ref()
 
-function handlerShowModalTODO (user: any) {
+function handlerShowModalTODO (user: User) {
   modalShowTODO.value = true
   userModal.value = user
 }
 
-function handlerShowModalEdit (user: any) {
+function handlerShowModalEdit (user: User) {
   modalShowEdit.value = true
   userModal.value = user
 }
