@@ -69,14 +69,21 @@ export const useUsersStore = defineStore('users', {
   }),
   actions: {
     changeTaskStatus (userId: number, taskId: number) {
-      const task = this.users.find(user => user.id === userId)!.todo.find(task => task.id === taskId)
-      task!.done = !task!.done
-      console.log('task', task!.done)
+      const task = this.users.find(user => user.id === userId)?.todo.find(task => task.id === taskId)
+      if (!task) {
+        console.error('Задача не найдена')
+        return
+      }
+      task.done = !task.done
     },
     editUser (idUser: number, fields: Fields) {
       const user = this.users.find(user => user.id === idUser)
+      if (!user) {
+        console.error('Пользователь не найден')
+        return
+      }
       for (const field of Object.keys(fields)) {
-        user![field as Field] = fields![field as Field] as string
+        user[field as Field] = fields[field as Field] as string
       }
       console.log(user)
     }

@@ -1,7 +1,7 @@
 <template>
   <div class="popup"  @click.self="emit('close-modal')">
     <div class="modal">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>
