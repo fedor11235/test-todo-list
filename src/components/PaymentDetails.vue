@@ -20,14 +20,14 @@ defineProps<{
 }>()
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .details {
   display: grid;
   grid-template-columns: auto 1fr;
   justify-items: start;
   gap: 8px;
   padding: 16px;
-  background-color: #59691D;
+  background-color: $color-main;
   color: white;
 }
 </style>

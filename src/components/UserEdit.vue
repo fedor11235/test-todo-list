@@ -9,7 +9,7 @@
       <input :value="userPhoneInput" @input="handlerInputPhone">
     </div>
 
-    <button :class="['save', {'save-disable': !enableSaveButton}]" @click="handlerSaveData">{{ textSaveButton }}</button>
+    <button :class="['button', 'save', {'button-disable': !enableSaveButton}]" @click="handlerSaveData">{{ textSaveButton }}</button>
   </div>
 </template>
 
@@ -86,35 +86,20 @@ function handlerSaveData () {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .edit {
   padding: 16px;
-  background-color: #59691D;
+  background-color: $color-main;
   color: white;
-}
-.data {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  justify-items: start;
-  gap: 8px;
-}
-.save {
-  margin-top: 8px;
-  width: 100%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: #D8EC89;
-  color: #60693D;
-  transition: scale .1s;
-  font-size: 16px;
-  font-weight: 500;
-}
-.save:active {
-  scale: 0.9;
-}
-.save-disable {
-  pointer-events: none;
-  cursor: pointer;
+  .data {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    gap: 8px;
+  }
+  .save {
+    margin-top: 8px;
+    width: 100%;
+  }
 }
 </style>

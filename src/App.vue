@@ -6,24 +6,3 @@
 <script lang="ts" setup>
 import NavigationLinks from '@/components/NavigationLinks.vue'
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 21px;
-  font-size: 16px;
-  font-weight: 500;
-}
-.v-enter-active,
-.v-leave-active {
-  transition: transform 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  transform: translateY(-100%);
-}
-</style>

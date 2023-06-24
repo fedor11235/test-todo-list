@@ -12,7 +12,7 @@ const emit = defineEmits<{
 }>()
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .popup {
   position: fixed;
   left: 0;
@@ -23,10 +23,10 @@ const emit = defineEmits<{
   width: 100%;
   height: 100%;
   z-index: 99;
-}
-.modal {
-  padding: 16px;
-  background-color: white;
-  box-shadow: 0 0 10px black;
+  .modal {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+  }
 }
 </style>

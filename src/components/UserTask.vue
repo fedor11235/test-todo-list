@@ -27,39 +27,24 @@ defineProps<{
 }>()
 </script>
 
-<style scoped>
-#checkbox {
-  display:inline-block;
-  width:19px;/*Размер вашей кнопки или чекбокса*/
-  height:19px;
-  margin:-1px 4px 0 8px;
-  vertical-align:middle;
-  cursor:pointer;
-}
+<style lang="scss" scoped>
 .task {
   display: flex;
   justify-content: space-between;
   padding: 8px;
   margin: 4px 16px;
-  background-color: #59691D;
+  background-color: $color-main;
   color: white;
-}
-.text {
-  margin-right: 16px;
-}
-.data {
-  display: flex;
-  gap: 16px;
-}
-.todo {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: #D8EC89;
-  color: #60693D;
-  transition: scale .1s;
-}
-.todo:active {
-  scale: 0.9;
+  .text {
+    margin-right: 16px;
+  }
+  .checkbox {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 8px;
+    vertical-align:middle;
+    cursor:pointer;
+  }
 }
 </style>

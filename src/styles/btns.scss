@@ -1,0 +1,17 @@
+.button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: $color-light;
+  color: $color-darkened;
+  transition: scale .1s;
+  font-size: 16px;
+  font-weight: 500;
+  &-disable {
+    pointer-events: none;
+    cursor: pointer;
+  }
+  &:active {
+    scale: 0.9;
+  }
+}
