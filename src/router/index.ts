@@ -8,11 +8,12 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: { name: 'users' }
+    },
+    {
+      path: '/users',
       name: 'users',
-      component: UsersView,
-      meta: {
-        auth: true
-      }
+      component: UsersView
     },
     {
       path: '/payments',
